@@ -1,0 +1,305 @@
+---
+const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
+---
+
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Waldorfská škola Semily</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+      @font-face {
+        font-family: 'Waldorf';
+        src: url('/waldorf-semily/fonts/waldorf-cz.ttf') format('truetype');
+      }
+
+        :root {
+        --modra: #0d2ec0;
+        --fialova: #4d1d86;
+        --cervena: #b00030;
+        --modra-svetla: rgba(13, 46, 192, 0.15);
+        --fialova-svetla: rgba(76, 29, 134, 0.36);
+        --cervena-svetla: rgba(176, 0, 48, 0.15);
+        }
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Montserrat', sans-serif;
+        color: #1a1a1a;
+        }
+
+        h1, h2, h3 {
+        font-family: 'Waldorf', serif;
+        }
+
+        header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 4rem;
+        background: white;
+        }
+
+        .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: #1a1a1a;
+        }
+
+        .logo img {
+        height: 130px;
+        }
+
+        .logo-text {
+        font-family: 'Waldorf', sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        }
+
+        nav ul {
+        display: flex;
+        gap: 5rem;
+        list-style: none;
+        align-items: center;
+        margin-bottom: 40px;
+        margin-right: 20px
+        }
+
+        nav a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        }
+
+        nav a:hover {
+        color: var(--fialova);
+        }
+        
+
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+        display: flex;
+        }
+
+        .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        
+        padding: 1rem;
+        list-style: none;
+        min-width: 200px;
+        flex-direction: column;
+        gap: 0.75rem;
+        z-index: 100;
+        }
+    
+        .dropdown-zs .dropdown-menu {
+        background: var(--cervena-svetla);
+        }
+
+        .dropdown-ss .dropdown-menu {
+        background: var(--modra-svetla);
+        }
+        
+        .dropdown-zs a:hover {
+        color: var(--cervena);
+        }
+
+        .dropdown-ss a:hover {
+        color: var(--modra);
+        }
+
+        main {
+        min-height: 70vh;
+        }
+
+        footer {
+        background: var(--fialova-svetla);
+        padding: 3rem 4rem;
+        margin-top: 4rem;
+        }
+
+        .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        }
+
+        .footer-logo img {
+        height: 130px;
+        margin-bottom: 1rem;
+        }
+
+        .footer-logo p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: #444;
+        }
+
+        .footer-col h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+        }
+
+        .footer-col ul {
+        list-style: none;
+        }
+
+        .footer-col ul li {
+        margin-bottom: 1rem;
+        }
+
+        .footer-col ul li a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 17px;
+        }
+
+        .footer-col ul li a:hover {
+        color: var(--fialova);
+        }
+
+        .footer-socky {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        }
+
+        .footer-socky img {
+        width: 28px;
+        height: 28px;
+        }
+
+        .footer-bottom {
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 1.5rem;
+        font-size: 0.75rem;
+        color: #666;
+        text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/waldorf-semily/" class="logo">
+        <img src="/waldorf-semily/images/logo.svg" alt="Waldorf Semily logo" />
+        <span class="logo-text">Waldorf Semily</span>
+      </a>
+        <nav>
+        <ul>
+            <li class="dropdown dropdown-zs">
+            <a href="/waldorf-semily/zakladni-skola">Základní škola</a>
+            <div class="dropdown-menu">
+                <a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a>
+                <a href="/waldorf-semily/zakladni-skola/zapis">Zápis</a>
+                <a href="/waldorf-semily/zakladni-skola/druzina">Družina</a>
+                <a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a>
+                <a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a>
+            </div>
+            </li>
+            <li class="dropdown dropdown-ss">
+            <a href="/waldorf-semily/lyceum">Střední škola</a>
+            <div class="dropdown-menu">
+                <a href="/waldorf-semily/lyceum/prijimaci-rizeni">Přijímací řízení</a>
+                <a href="/waldorf-semily/lyceum/maturita">Maturita</a>
+                <a href="/waldorf-semily/lyceum/profil-absolventa">Profil absolventa</a>
+                <a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a>
+            </div>
+            </li>
+            <li><a href="/waldorf-semily/kontakt">Kontakt</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer style={`background: ${barvFooteru};`}>
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="/waldorf-semily/images/logo.svg" alt="Waldorf Semily logo" />
+        </div>
+        
+        <div class="footer-col">
+            <h4>Kontakt</h4>
+            <ul>
+                <div class="footer-socky">
+                    <a href="https://www.instagram.com/waldorf_semily/" target="_blank">
+                        <img src="/waldorf-semily/images/instagram.svg" alt="Instagram" />
+                    </a>
+                    <a href="https://www.facebook.com/SemilyWaldorf/" target="_blank">
+                        <img src="/waldorf-semily/images/facebook.svg" alt="Facebook" />
+                    </a>
+                </div>             
+                <li><a href="https://www.google.com/maps/place/Waldorfsk%C3%A1+z%C3%A1kladn%C3%AD+a+st%C5%99edn%C3%AD+%C5%A1kola+Semily,+p.+o./@50.6013711,15.3342814,731m/data=!3m2!1e3!4b1!4m6!3m5!1s0x470eb9e1e07463c1:0x820fae4e433cc4ff!8m2!3d50.6013711!4d15.3342814!16s%2Fg%2F11f147xh1g?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Waldorfská základní a střední škola <br />Semily, p. o.<br />Tyršova 485, 513 01 Semily</a></li>
+                <li><a href="mailto:info@waldorf.semily.cz">info@waldorf.semily.cz</a></li>
+                <li>Datová schránka: shdknnh</li>
+                <li>IČO: 00854824</li>
+                <li>Bankovní účet: 28534581/0100</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Základní škola</h4>
+          <ul>
+            <li><a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/zapis">Zápis do 1. třídy</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/druzina">Družina</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Střední škola</h4>
+          <ul>
+            <li><a href="/waldorf-semily/lyceum/maturita">Maturita</a></li>
+            <li><a href="/waldorf-semily/lyceum/profil-absolventa">Profil absolventa</a></li>
+            <li><a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a></li>
+            <li><a href="/waldorf-semily/lyceum/prijimaci-rizeni">Přijímací řízení 26/27</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Dokumenty</h4>
+          <ul>
+            <li><a href="/waldorf-semily/dokumenty">ZŠ - Školní vzdělávací program</a></li>
+            <li><a href="/waldorf-semily/dokumenty">SŠ - Školní vzdělávací program</a></li>
+            <li><a href="/waldorf-semily/dokumenty">Všechny dokumenty</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="footer-bottom">
+        <p>© copyright 2026 Waldorfská základní a střední škola Semily, p. o.</p>
+      </div>
+    </footer>
+    
+        
+  </body>
+</html>
