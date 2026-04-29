@@ -3,5 +3,345 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Domů">
-  
+
+  <!-- HERO + KARTY společně přes pozadí -->
+  <div class="hero-wrapper">
+    <img class="hero-bg" src="/waldorf-semily/images/purple.png" alt="mandala" />
+    
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Cesta <br>druhým <br>a třetím sedmiletím</h1>
+        <div class="hero-vedlejsi">
+            <p>Abychom vychovali celé dítě, musíme oslovit nejenom jeho rozum <br> ale i vůli a srdce.</p>
+            <div class="hero-odkazy">
+            <a href="/waldorf-semily/dokumenty">DOKUMENTY</a>
+            <a href="/waldorf-semily/zakladni-skola/jak-ucime">JAK UČÍME</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KARTY -->
+    <section class="karty">
+      <a href="/waldorf-semily/zakladni-skola" class="karta karta-zs">
+        <span>1. - 9. třída</span>
+        <h2>Základní škola</h2>
+        <p>Celostní vzdělávání.<br />Hlava, srdce i ruce.<br />Rytmus, který odpovídá vývoji dítěte.</p>
+        <span class="karta-link">VÍCE O ZÁKLADNÍ ŠKOLE</span>
+      </a>
+      <a href="/waldorf-semily/lyceum" class="karta karta-ss">
+        <span>Waldorfské Lyceum</span>
+        <h2>Střední škola</h2>
+        <p>Všeobecné vzdělání zakončené maturitou.<br />Široký rozhled - umění a řemeslo.<br />Prostor pro vlastní rozvoj.<br />Důraz na celého člověka.</p>
+        <span class="karta-link">VÍCE O STŘEDNÍ ŠKOLE</span>
+      </a>
+    </section>
+  </div>
+
+  <!-- AKTUALITY -->
+  <section class="aktuality">
+    <h2>Co se u nás děje?</h2>
+    <div class="aktuality-grid">
+      <div class="aktualita aktualita-zs">
+        <span>ZŠ</span>
+        <h3>Den otevřených dveří</h3>
+        <p class="datum">15. Dubna 2026</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="aktualita aktualita-ss">
+        <span>SŠ</span>
+        <h3>Výsledky přijímacího řízení 2026/27</h3>
+        <p class="datum">1. Května 2026</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="aktualita aktualita-cela">
+        <span>Celá škola</span>
+        <h3>Jarní slavnost</h3>
+        <p class="datum">10. Března 2026</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <a href="#" class="vsechny-aktuality">VŠECHNY AKTUALITY</a>
+  </section>
+
+  <!-- UDÁLOSTI -->
+  <section class="udalosti">
+    <h3>Nadcházející události</h3>
+    <div class="udalosti-grid">
+      <div class="udalost">
+        <div class="udalost-datum">
+          <span class="cislo">21</span>
+          <span class="mesic">KVĚTEN</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="udalost-oddelovac"></div>
+      <div class="udalost">
+        <div class="udalost-datum">
+          <span class="cislo">10</span>
+          <span class="mesic">ČERVEN</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  /* HERO WRAPPER - společné pozadí pro hero i karty */
+  .hero-wrapper {
+    position: relative;
+    padding: 0 8rem;
+    overflow: visible;
+  }
+
+  .hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2600px;
+  height: 2600px;
+  object-fit: contain;
+  opacity: 0.5;
+  z-index: 0;
+  transform: translate(-43%, -45%) rotate(-150deg);
+}
+
+  /* HERO */
+    .hero {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0 10rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    }
+
+    .hero h1 {
+    font-family: Waldorf;
+    font-size: 90px;
+    line-height: 1.2;
+    flex-shrink: 0;
+    max-width: 500px;
+    }
+
+    .hero-vedlejsi {
+    padding-top: 17rem;
+    padding-left: 6rem;
+    }
+
+    .hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 300px;
+    }
+
+    .hero-odkazy {
+    display: flex;
+    gap: 3rem;
+    }
+
+  .hero-odkazy a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-odkazy a:hover {
+    color: var(--fialova);
+  }
+
+  /* KARTY */
+  .karty {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 2rem 0 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .karta {
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s;
+  }
+
+  .karta:hover {
+    transform: translateY(-4px);
+  }
+
+  .karta-zs {
+    background: var(--cervena-svetla);
+  }
+
+  .karta-ss {
+    background: var(--modra-svetla);
+  }
+
+  .karta span {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .karta h2 {
+    font-family: Waldorf;
+    font-size: 40px;
+    margin: 0.25rem 0;
+  }
+
+  .karta p {
+    font-size: 14px;
+    line-height: 1.8;
+    flex-grow: 1;
+  }
+
+  .karta-link {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+  }
+
+  /* AKTUALITY */
+  .aktuality {
+    padding: 4rem 8rem;
+    text-align: center;
+  }
+
+  .aktuality h2 {
+    font-family: Waldorf;
+    font-size: 50px;
+    margin-bottom: 3rem;
+  }
+
+  .aktuality-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .aktualita {
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .aktualita-zs {
+    background: var(--cervena-svetla);
+  }
+
+  .aktualita-ss {
+    background: var(--modra-svetla);
+  }
+
+  .aktualita-cela {
+    background: var(--fialova-svetla);
+  }
+
+  .aktualita span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .aktualita h3 {
+    font-size: 22px;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .datum {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+
+  .aktualita p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .vsechny-aktuality {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .vsechny-aktuality:hover {
+    color: var(--fialova);
+  }
+
+  /* UDÁLOSTI */
+  .udalosti {
+    padding: 2rem 8rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+  }
+
+  .udalosti h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .udalosti-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .udalost {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .udalost-datum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cislo {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--fialova);
+  }
+
+  .mesic {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .udalost p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-top: 0.5rem;
+  }
+
+  .udalost-oddelovac {
+    width: 1px;
+    height: 80px;
+    background: rgba(0,0,0,0.2);
+  }
+</style>

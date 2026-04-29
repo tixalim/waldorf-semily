@@ -32,6 +32,7 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         body {
         font-family: 'Montserrat', sans-serif;
         color: #1a1a1a;
+        overflow-x: hidden;
         }
 
         h1, h2, h3 {
@@ -44,6 +45,8 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         justify-content: space-between;
         padding: 1.5rem 4rem;
         background: white;
+        position: relative;
+        z-index: 10;
         }
 
         .logo {
@@ -245,7 +248,7 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
     <footer style={`background: ${barvFooteru};`}>
       <div class="footer-grid">
         <div class="footer-logo">
-          <img src="/waldorf-semily/images/logo.svg" alt="Waldorf Semily logo" />
+          <img src="/waldorf-semily/images/waldorf-logo-01.svg" alt="Waldorf Semily logo" />
         </div>
         
         <div class="footer-col">
