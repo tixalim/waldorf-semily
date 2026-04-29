@@ -136,6 +136,67 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         min-height: 70vh;
         }
 
+        /* UDÁLOSTI */
+        .udalosti {
+          padding: 2rem 8rem;
+          border-top: 1px solid rgba(0, 0, 0, 0.38);
+          border-bottom: 1px solid rgba(0,0,0,0.38);
+          margin-bottom: 2rem;
+        }
+
+        .udalosti h3 {
+          font-family: Waldorf;
+          font-size: 30px;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+        }
+
+        .udalosti-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr auto 1fr;
+          gap: 3rem;
+          align-items: center;
+        }
+
+        .udalost {
+          display: flex;
+          gap: 1.5remrem;
+          align-items: flex-start;
+        }
+
+        .udalost-datum {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cislo {
+          font-family: Waldorf;
+          font-size: 55px;
+          font-weight: 700;
+          line-height: 1;
+          color: #1a1a1a;
+        }
+
+        .mesic {
+          font-family: Waldorf;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+        }
+
+        .udalost p {
+          font-size: 14px;
+          line-height: 1.6;
+          padding: 0.5rem 0 0 1.5rem;
+        }
+
+        .udalost-oddelovac {
+          width: 1px;
+          height: 80px;
+          background: rgba(0,0,0,0.38);
+        }
+
         footer {
         background: var(--fialova-svetla);
         padding: 3rem 4rem;
@@ -244,6 +305,28 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
     <main>
       <slot />
     </main>
+
+    <!-- UDÁLOSTI -->
+    <section class="udalosti">
+    <div class="udalosti-grid">
+        <h3>Nadcházející události</h3>
+        <div class="udalost">
+        <div class="udalost-datum">
+            <span class="cislo">21</span>
+            <span class="mesic">KVĚTEN</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="udalost-oddelovac"></div>
+        <div class="udalost">
+        <div class="udalost-datum">
+            <span class="cislo">10</span>
+            <span class="mesic">ČERVEN</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    </section>
 
     <footer style={`background: ${barvFooteru};`}>
       <div class="footer-grid">
