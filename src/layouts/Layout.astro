@@ -138,10 +138,12 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
 
         /* UDÁLOSTI */
         .udalosti {
+          position: relative;
           padding: 2rem 8rem;
           border-top: 1px solid rgba(0, 0, 0, 0.38);
           border-bottom: 1px solid rgba(0,0,0,0.38);
           margin-bottom: 2rem;
+          z-index: 1;
         }
 
         .udalosti h3 {
@@ -160,8 +162,17 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
 
         .udalost {
           display: flex;
-          gap: 1.5remrem;
+          gap: 1.5rem;
           align-items: flex-start;
+          text-decoration: none;
+          color: #1a1a1a;
+          border-radius: 12px;
+          padding: 1rem;
+          transition: background 0.2s;
+        }
+
+        .udalost:hover {
+          background: var(--fialova-svetla);
         }
 
         .udalost-datum {
@@ -308,24 +319,24 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
 
     <!-- UDÁLOSTI -->
     <section class="udalosti">
-    <div class="udalosti-grid">
+      <div class="udalosti-grid">
         <h3>Nadcházející události</h3>
-        <div class="udalost">
-        <div class="udalost-datum">
+        <a href="/waldorf-semily/udalosti" class="udalost">
+          <div class="udalost-datum">
             <span class="cislo">21</span>
             <span class="mesic">KVĚTEN</span>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </a>
         <div class="udalost-oddelovac"></div>
-        <div class="udalost">
-        <div class="udalost-datum">
+        <a href="/waldorf-semily/udalosti" class="udalost">
+          <div class="udalost-datum">
             <span class="cislo">10</span>
             <span class="mesic">ČERVEN</span>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-    </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </a>
+      </div>
     </section>
 
     <footer style={`background: ${barvFooteru};`}>
