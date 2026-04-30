@@ -281,6 +281,216 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         color: #666;
         text-align: center;
         }
+
+      /* BURGER */
+      .burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .burger span {
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: #1a1a1a;
+        transition: all 0.3s;
+      }
+
+      /* MOBILNÍ MENU */
+      .mobil-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 1000;
+        padding: 4rem 2rem 2rem;
+        overflow-y: auto;
+      }
+
+      .mobil-menu.otevreno {
+        display: block;
+      }
+
+      .mobil-zavrit {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .mobil-menu ul {
+        list-style: none;
+      }
+
+      .mobil-menu > ul > li {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .mobil-toggle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: none;
+        border: none;
+        padding: 1.5rem 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .mobil-podmenu {
+        display: none;
+        padding: 0 0 1rem 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .mobil-podmenu.otevreno {
+        display: flex;
+      }
+
+      .mobil-podmenu li a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 16px;
+        display: block;
+        padding: 0.5rem 0;
+      }
+
+      .mobil-menu > ul > li > a {
+        display: block;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 1.5rem 0;
+      }
+
+      .sipka {
+        font-size: 12px;
+        transition: transform 0.3s;
+      }
+
+      .sipka.otevreno {
+        transform: rotate(180deg);
+      }
+
+      /* SCROLLBAR */
+      body {
+        scrollbar-width: thin;
+        scrollbar-color: var(--fialova) transparent;
+      }
+
+      body::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      body::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background: var(--fialova);
+        border-radius: 10px;
+      }
+
+      body::-webkit-scrollbar-thumb:hover {
+        background: var(--cervena);
+      }
+
+      /* RESPONZIVITA */
+      @media (max-width: 1024px) {
+        nav {
+          display: none;
+        }
+
+        .burger {
+          display: flex;
+        }
+
+        header {
+          padding: 1rem 2rem;
+        }
+
+        .logo img {
+          height: 80px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 1rem 1.5rem;
+        }
+
+        .logo-text {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .udalosti {
+          padding: 2rem 3rem;
+        }
+
+        .udalosti-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .udalost-oddelovac {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .udalosti {
+          padding: 2rem 1.5rem;
+        }
+
+        .cislo {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      footer {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      footer {
+        padding: 1.5rem;
+      }
+    }
+
     </style>
   </head>
   <body>
@@ -313,7 +523,39 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
             <li><a href="/waldorf-semily/kontakt">Kontakt</a></li>
         </ul>
         </nav>
+        <button class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
     </header>
+    <div class="mobil-menu" id="mobilMenu">
+      <button class="mobil-zavrit" id="mobilZavrit">✕</button>
+      <ul>
+        <li>
+          <button class="mobil-toggle">Základní škola <span class="sipka">▼</span></button>
+          <ul class="mobil-podmenu">
+            <li><a href="/waldorf-semily/zakladni-skola">O základní škole</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/zapis">Zápis</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/druzina">Družina</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a></li>
+            <li><a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="mobil-toggle">Střední škola <span class="sipka">▼</span></button>
+          <ul class="mobil-podmenu">
+            <li><a href="/waldorf-semily/lyceum">O střední škole</a></li>
+            <li><a href="/waldorf-semily/lyceum/prijimaci-rizeni">Přijímací řízení</a></li>
+            <li><a href="/waldorf-semily/lyceum/maturita">Maturita</a></li>
+            <li><a href="/waldorf-semily/lyceum/profil-absolventa">Profil absolventa</a></li>
+            <li><a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a></li>
+          </ul>
+        </li>
+        <li><a href="/waldorf-semily/kontakt">Kontakt</a></li>
+      </ul>
+    </div>
 
     <main>
       <slot />
@@ -398,6 +640,30 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         <p>© copyright 2026 Waldorfská základní a střední škola Semily, p. o.</p>
       </div>
     </footer>
+
+    <script is:inline>
+      const burger = document.getElementById('burger');
+      const mobilMenu = document.getElementById('mobilMenu');
+      const mobilZavrit = document.getElementById('mobilZavrit');
+      const toggley = document.querySelectorAll('.mobil-toggle');
+
+      burger.addEventListener('click', () => {
+        mobilMenu.classList.add('otevreno');
+      });
+
+      mobilZavrit.addEventListener('click', () => {
+        mobilMenu.classList.remove('otevreno');
+      });
+
+      toggley.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const podmenu = toggle.nextElementSibling;
+          const sipka = toggle.querySelector('.sipka');
+          podmenu.classList.toggle('otevreno');
+          sipka.classList.toggle('otevreno');
+        });
+      });
+    </script>
     
         
   </body>

@@ -281,4 +281,57 @@ import Layout from '../layouts/Layout.astro';
   .vsechny-aktuality:hover {
     color: var(--fialova);
   }
+
+  @media (max-width: 1024px) {
+  .hero-wrapper {
+    padding: 0 3rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 2rem 0 4rem;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .hero-vedlejsi {
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .karty {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0 4rem;
+  }
+
+  .aktuality {
+    padding: 3rem 3rem;
+  }
+
+  .aktuality-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aktuality h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .aktuality {
+    padding: 2rem 1.5rem;
+  }
+}
 </style>

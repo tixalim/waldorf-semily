@@ -156,4 +156,70 @@ import Layout from '../../layouts/Layout.astro';
   .zs-link:hover {
     color: var(--cervena);
   }
+
+  @media (max-width: 1024px) {
+  .breadcrumb {
+    padding: 2rem 3rem;
+  }
+
+  .zs-bg {
+    width: 1500px;
+    height: 1500px;
+  }
+
+  .zs-hero-wrapper {
+    padding: 0 3rem;
+  }
+
+  .zs-hero h1 {
+    font-size: 60px;
+  }
+
+  .zs-hero p {
+    font-size: 17px;
+  }
+
+  .zs-karty {
+    grid-template-columns: 1fr;
+    padding: 3rem 3rem;
+    gap: 1.5rem;
+  }
+
+  .zs-link-wrapper {
+    padding: 1rem 3rem 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 1.5rem;
+  }
+
+  .zs-hero-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .zs-hero h1 {
+    font-size: 44px;
+  }
+
+  .zs-hero p {
+    font-size: 16px;
+  }
+
+  .zs-karty {
+    padding: 1rem 1.5rem;
+  }
+
+  .zs-karta h2 {;
+    font-size: 30px;
+    margin-bottom: 1.5rem;
+  }
+
+
+  .zs-link-wrapper {
+    padding: 1rem 1.5rem 2rem;
+  }
+}
+
 </style>
