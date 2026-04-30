@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- HERO + KARTY společně přes pozadí -->
   <div class="hero-wrapper">
-    <img class="hero-bg" src="/waldorf-semily/images/purple.png" alt="mandala" />
+    <img class="hero-bg" src="/waldorf-semily/images/purple.jpeg" alt="mandala" />
     
     <!-- HERO -->
     <section class="hero">
@@ -79,7 +79,6 @@ import Layout from '../layouts/Layout.astro';
   width: 2600px;
   height: 2600px;
   object-fit: contain;
-  opacity: 0.5;
   z-index: 0;
   transform: translate(-43%, -45%) rotate(-150deg);
 }
@@ -170,7 +169,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .karta span {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
@@ -182,14 +181,14 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .karta p {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     line-height: 1.8;
     flex-grow: 1;
   }
 
   .karta-link {
-    font-size: 13px !important;
+    font-size: 17px !important;
     font-weight: 600 !important;
     letter-spacing: 0.08em;
     margin-top: 1rem;
@@ -222,8 +221,8 @@ import Layout from '../layouts/Layout.astro';
     padding: 1.5rem;
     text-decoration: none;
     color: #1a1a1a;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
     transition: transform 0.2s;
   }
 
@@ -247,24 +246,25 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .aktualita span {
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
 
   .aktualita h3 {
     font-size: 22px;
-    margin: 0.5rem 0 1rem;
+    margin: 1.5rem 0 1rem;
+    min-height: 55px;
   }
 
   .datum {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 17px;
     margin-bottom: 1rem;
   }
 
   .aktualita p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.6;
   }
 

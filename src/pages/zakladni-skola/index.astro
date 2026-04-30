@@ -1,12 +1,159 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<html lang="cs">
-  <head>
-    <meta charset="utf-8" />
-    <title>Základní škola | Waldorfská škola Semily</title>
-  </head>
-  <body>
-    <h1>Základní škola</h1>
-  </body>
-</html>
+<Layout title="Základní škola" barvFooteru="var(--cervena-svetla)">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="/waldorf-semily/">ÚVOD</a>
+    <span> - </span>
+    <a href="/waldorf-semily/zakladni-skola">ZÁKLADNÍ ŠKOLA</a>
+    <span> - </span>
+    <span>O ZÁKLADNÍ ŠKOLE</span>
+  </nav>
+
+  <!-- HERO -->
+  <div class="zs-hero-wrapper">
+    <img class="zs-bg" src="/waldorf-semily/images/red.jpeg" alt="červená mandala" />
+    <section class="zs-hero">
+      <h1>Škola pro <br>celého člověka</h1>
+        <p>Waldorfská škola je celosvětově rozšířenou výraznou pedagogickou alternativou k tradičním školám. Je součástí pedagogického konceptu waldorfské pedagogiky sahajícího od mateřské školy, přes základní až ke střední škole.</p>
+    </section>
+  </div>
+
+  <!-- 4 KARTY -->
+  <section class="zs-karty">
+    <div class="zs-karta">
+      <h2>Pro celého člověka</h2>
+      <p>Jeho hlavu, srdce i ruce. Celostní pedagogika znamená oslovovat v dítěti vyváženě jeho intelektuální, citovou i volní stránku. Prakticky se tak děje provázaností poznávacích, múzických a řemeslně - uměleckých činností.</p>
+    </div>
+    <div class="zs-karta">
+      <h2>Podporující zdraví</h2>
+      <p>Tělesné, duševní i duchovní. Děje se tak na mnoha rovinách počínaje uspořádáním vyučování, rytmem dne i roku a konče specifickými předměty a výukovými činnostmi, které působí na zdravý rozvoj tělesnosti dítěte.</p>
+    </div>
+    <div class="zs-karta">
+      <h2>Doprovázející vývoj dítěte</h2>
+      <p>S jeho měnicími se potřebami, ale touhou po stabilitě. Vzdělávací program školy se důsledně odvíjí z poznání dětského vývoje. Učební látka a výukové činnosti nejsou cílem, ale nástrojem k podpoře tohoto vývoje.</p>
+    </div>
+    <div class="zs-karta">
+      <h2>Podporující celoživotní učení</h2>
+      <p>Bez stresu, strachu ze selhání a nezdravé ctižádostivosti. Vycházíme z předpokladu, že jedinou opravdu spolehlivou a trvalou cestou k celoživotnímu učení je probuzení zájmu o poznání.</p>
+    </div>
+  </section>
+
+  <!-- JAK UČÍME -->
+  <div class="zs-link-wrapper">
+    <a href="/waldorf-semily/zakladni-skola/jak-ucime" class="zs-link">JAK UČÍME</a>
+  </div>
+
+</Layout>
+
+<style>
+  /* BREADCRUMB */
+  .breadcrumb {
+    position: relative;
+    padding: 3rem 6rem;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    z-index: 1;
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--cervena);
+  }
+
+  /* HERO */
+  .zs-hero-wrapper {
+    position: relative;
+    padding: 0 8rem;
+    overflow: visible;
+    z-index: 0;
+  }
+
+  .zs-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2400px;
+    height: 2400px;
+    object-fit: contain;
+    z-index: 0;
+    transform: translate(-40%, -38%) rotate(135deg);
+  }
+
+  .zs-hero {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0 10rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .zs-hero h1 {
+    font-family: Waldorf;
+    font-size: 90px;
+    line-height: 1.2;
+    max-width: 800px;
+  }
+
+  .zs-hero p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    max-width: 700px;
+  }
+
+  /* 4 KARTY */
+  .zs-karty {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 4rem 25rem 4rem;
+  }
+
+  .zs-karta {
+    background: var(--cervena-svetla);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .zs-karta h2 {
+    font-family: Waldorf;
+    font-size: 40px;
+    margin-bottom: 1.5rem;
+  }
+
+  .zs-karta p {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* JAK UČÍME ODKAZ */
+  .zs-link-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 8rem 5rem;
+  }
+
+  .zs-link {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .zs-link:hover {
+    color: var(--cervena);
+  }
+</style>
