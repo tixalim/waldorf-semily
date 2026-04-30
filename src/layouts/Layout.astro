@@ -29,10 +29,16 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         box-sizing: border-box;
         }
 
+        html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+        }
+
         body {
         font-family: 'Montserrat', sans-serif;
         color: #1a1a1a;
-        overflow-x: hidden;
+        
+        overflow-x: clip;
         }
 
         h1, h2, h3 {
@@ -76,7 +82,7 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         list-style: none;
         align-items: center;
         margin-bottom: 40px;
-        margin-right: 20px
+        margin-right: 20px;
         }
 
         nav a {
@@ -415,9 +421,7 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         background: var(--cervena);
       }
 
-      html {
-      overflow-x: hidden;
-      }
+    
 
       /* RESPONZIVITA */
       @media (max-width: 1024px) {
