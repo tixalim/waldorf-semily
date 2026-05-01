@@ -1,5 +1,5 @@
 ---
-const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
+const { title, barvFooteru = "var(--fialova-svetla)" } = Astro.props;
 ---
 
 <html lang="cs">
@@ -8,44 +8,47 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} | Waldorfská škola Semily</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
       @font-face {
-        font-family: 'Waldorf';
-        src: url('/waldorf-semily/fonts/waldorf-cz.ttf') format('truetype');
+        font-family: "Waldorf";
+        src: url("/waldorf-semily/fonts/waldorf-cz.ttf") format("truetype");
       }
 
-        :root {
+      :root {
         --modra: #0d2ec0;
         --fialova: #4d1d86;
         --cervena: #b00030;
         --modra-svetla: rgba(13, 46, 192, 0.15);
         --fialova-svetla: rgba(76, 29, 134, 0.36);
         --cervena-svetla: rgba(176, 0, 48, 0.15);
-        }
+      }
 
-        * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        }
+      }
 
-        html, body {
+      html,
+      body {
         overflow-x: hidden;
         max-width: 100%;
-        }
+      }
 
-        body {
-        font-family: 'Montserrat', sans-serif;
+      body {
+        font-family: "Montserrat", sans-serif;
         color: #1a1a1a;
         background-color: #fdf8f5;
         overflow-x: clip;
-        }
+      }
 
-        h1, h2, h3 {
-        font-family: 'Waldorf', serif;
-        }
+      h1,
+      h2,
+      h3 {
+        font-family: "Waldorf", serif;
+      }
 
-        header {
+      header {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -54,240 +57,239 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         position: relative;
         z-index: 10;
         background-color: #fdf8f5;
-        }
+      }
 
-        .logo {
+      .logo {
         display: flex;
         align-items: center;
         gap: 1rem;
         text-decoration: none;
         color: #1a1a1a;
-        }
+      }
 
-        .logo img {
+      .logo img {
         height: 130px;
-        }
+      }
 
-        .logo-text {
-        font-family: 'Waldorf', sans-serif;
+      .logo-text {
+        font-family: "Waldorf", sans-serif;
         font-weight: 500;
         font-size: 22px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-bottom: 40px;
-        }
+      }
 
-        nav ul {
+      nav ul {
         display: flex;
         gap: 5rem;
         list-style: none;
         align-items: center;
         margin-bottom: 40px;
         margin-right: 20px;
-        }
+      }
 
-        nav a {
+      nav a {
         text-decoration: none;
         color: #1a1a1a;
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        }
+      }
 
-        nav a:hover {
+      nav a:hover {
         color: var(--fialova);
-        }
-        
+      }
 
-        .dropdown {
+      .dropdown {
         position: relative;
         display: inline-block;
-        }
+      }
 
-        .dropdown:hover .dropdown-menu {
+      .dropdown:hover .dropdown-menu {
         display: flex;
-        }
+      }
 
-        .dropdown-menu {
+      .dropdown-menu {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
-        
+
         padding: 1rem;
         list-style: none;
         min-width: 200px;
         flex-direction: column;
         gap: 0.75rem;
         z-index: 100;
-        }
-    
-        .dropdown-zs .dropdown-menu {
+      }
+
+      .dropdown-zs .dropdown-menu {
         background: var(--cervena-svetla);
-        }
+      }
 
-        .dropdown-ss .dropdown-menu {
+      .dropdown-ss .dropdown-menu {
         background: var(--modra-svetla);
-        }
-        
-        .dropdown-zs a:hover {
+      }
+
+      .dropdown-zs a:hover {
         color: var(--cervena);
-        }
+      }
 
-        .dropdown-ss a:hover {
+      .dropdown-ss a:hover {
         color: var(--modra);
-        }
+      }
 
-        main {
+      main {
         min-height: 70vh;
-        }
+      }
 
-        /* UDÁLOSTI */
-        .udalosti {
-          position: relative;
-          padding: 2rem 8rem;
-          border-top: 1px solid rgba(0, 0, 0, 0.38);
-          border-bottom: 1px solid rgba(0,0,0,0.38);
-          margin-bottom: 2rem;
-          z-index: 1;
-        }
+      /* UDÁLOSTI */
+      .udalosti {
+        position: relative;
+        padding: 2rem 8rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.38);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+        margin-bottom: 2rem;
+        z-index: 1;
+      }
 
-        .udalosti h3 {
-          font-family: Waldorf;
-          font-size: 30px;
-          font-weight: 600;
-          margin-bottom: 1.5rem;
-        }
+      .udalosti h3 {
+        font-family: Waldorf;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
 
-        .udalosti-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr auto 1fr;
-          gap: 3rem;
-          align-items: center;
-        }
+      .udalosti-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
 
-        .udalost {
-          display: flex;
-          gap: 1.5rem;
-          align-items: flex-start;
-          text-decoration: none;
-          color: #1a1a1a;
-          border-radius: 12px;
-          padding: 1rem;
-          transition: background 0.2s;
-        }
+      .udalost {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+        text-decoration: none;
+        color: #1a1a1a;
+        border-radius: 12px;
+        padding: 1rem;
+        transition: background 0.2s;
+      }
 
-        .udalost:hover {
-          background: var(--fialova-svetla);
-        }
+      .udalost:hover {
+        background: var(--fialova-svetla);
+      }
 
-        .udalost-datum {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+      .udalost-datum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-        .cislo {
-          font-family: Waldorf;
-          font-size: 55px;
-          font-weight: 700;
-          line-height: 1;
-          color: #1a1a1a;
-        }
+      .cislo {
+        font-family: Waldorf;
+        font-size: 55px;
+        font-weight: 700;
+        line-height: 1;
+        color: #1a1a1a;
+      }
 
-        .mesic {
-          font-family: Waldorf;
-          font-size: 16px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-        }
+      .mesic {
+        font-family: Waldorf;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
 
-        .udalost p {
-          font-size: 17px;
-          line-height: 1.6;
-          padding: 0.5rem 0 0 1.5rem;
-        }
+      .udalost p {
+        font-size: 17px;
+        line-height: 1.6;
+        padding: 0.5rem 0 0 1.5rem;
+      }
 
-        .udalost-oddelovac {
-          width: 1px;
-          height: 80px;
-          background: rgba(0,0,0,0.38);
-        }
+      .udalost-oddelovac {
+        width: 1px;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.38);
+      }
 
-        footer {
+      footer {
         position: relative;
         background: var(--fialova-svetla);
         padding: 3rem 4rem;
         margin-top: 4rem;
         z-index: 10;
-        }
+      }
 
-        .footer-grid {
+      .footer-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         gap: 2rem;
         margin-bottom: 2rem;
-        }
+      }
 
-        .footer-logo img {
+      .footer-logo img {
         height: 130px;
         margin-bottom: 1rem;
-        }
+      }
 
-        .footer-logo p {
+      .footer-logo p {
         font-size: 0.8rem;
         line-height: 1.6;
         color: #444;
-        }
+      }
 
-        .footer-col h4 {
-        font-family: 'Montserrat', sans-serif;
+      .footer-col h4 {
+        font-family: "Montserrat", sans-serif;
         font-weight: 500;
         font-size: 20px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-bottom: 1rem;
         color: #1a1a1a;
-        }
+      }
 
-        .footer-col ul {
+      .footer-col ul {
         list-style: none;
-        }
+      }
 
-        .footer-col ul li {
+      .footer-col ul li {
         margin-bottom: 1rem;
-        }
+      }
 
-        .footer-col ul li a {
+      .footer-col ul li a {
         text-decoration: none;
         color: #1a1a1a;
         font-size: 17px;
-        }
+      }
 
-        .footer-col ul li a:hover {
+      .footer-col ul li a:hover {
         color: var(--fialova);
-        }
+      }
 
-        .footer-socky {
+      .footer-socky {
         display: flex;
         gap: 1rem;
         margin-top: 0.5rem;
         margin-bottom: 1rem;
-        }
+      }
 
-        .footer-socky img {
+      .footer-socky img {
         width: 28px;
         height: 28px;
-        }
+      }
 
-        .footer-bottom {
-        border-top: 1px solid rgba(0,0,0,0.1);
+      .footer-bottom {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
         padding-top: 1.5rem;
         font-size: 0.75rem;
         color: #666;
         text-align: center;
-        }
+      }
 
       /* BURGER */
       .burger {
@@ -341,7 +343,7 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
       }
 
       .mobil-menu > ul > li {
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       .mobil-toggle {
@@ -352,7 +354,7 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         background: none;
         border: none;
         padding: 1.5rem 0;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.05em;
@@ -422,8 +424,6 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         background: var(--cervena);
       }
 
-    
-
       /* RESPONZIVITA */
       @media (max-width: 1024px) {
         nav {
@@ -479,27 +479,26 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
       }
 
       @media (max-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+
+        footer {
+          padding: 2rem;
+        }
       }
 
-      footer {
-        padding: 2rem;
-      }
-    }
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
 
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        footer {
+          padding: 1.5rem;
+        }
       }
-
-      footer {
-        padding: 1.5rem;
-      }
-    }
-
     </style>
   </head>
   <body>
@@ -508,58 +507,92 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
         <img src="/waldorf-semily/images/logo.svg" alt="Waldorf Semily logo" />
         <span class="logo-text">Waldorf Semily</span>
       </a>
-        <nav>
+      <nav>
         <ul>
-            <li class="dropdown dropdown-zs">
+          <li class="dropdown dropdown-zs">
             <a href="/waldorf-semily/zakladni-skola">Základní škola</a>
             <div class="dropdown-menu">
-                <a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a>
-                <a href="/waldorf-semily/zakladni-skola/zapis">Zápis</a>
-                <a href="/waldorf-semily/zakladni-skola/druzina">Družina</a>
-                <a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a>
-                <a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a>
+              <a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a>
+              <a href="/waldorf-semily/zakladni-skola/prijmani"
+                >Příjmání a Zápis</a
+              >
+              <a href="/waldorf-semily/zakladni-skola/druzina">Družina</a>
+              <a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a>
+              <a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a>
             </div>
-            </li>
-            <li class="dropdown dropdown-ss">
+          </li>
+          <li class="dropdown dropdown-ss">
             <a href="/waldorf-semily/lyceum">Střední škola</a>
             <div class="dropdown-menu">
-                <a href="/waldorf-semily/lyceum/prijimaci-rizeni">Přijímací řízení</a>
-                <a href="/waldorf-semily/lyceum/maturita">Maturita</a>
-                <a href="/waldorf-semily/lyceum/profil-absolventa">Profil absolventa</a>
-                <a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a>
+              <a href="/waldorf-semily/lyceum/prijimaci-rizeni"
+                >Přijímací řízení</a
+              >
+              <a href="/waldorf-semily/lyceum/maturita">Maturita</a>
+              <a href="/waldorf-semily/lyceum/profil-absolventa"
+                >Profil absolventa</a
+              >
+              <a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a>
             </div>
-            </li>
-            <li><a href="/waldorf-semily/kontakt">Kontakt</a></li>
+          </li>
+          <li><a href="/waldorf-semily/kontakt">Kontakt</a></li>
         </ul>
-        </nav>
-        <button class="burger" id="burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      </nav>
+      <button class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
     <div class="mobil-menu" id="mobilMenu">
       <button class="mobil-zavrit" id="mobilZavrit">✕</button>
       <ul>
         <li>
-          <button class="mobil-toggle">Základní škola <span class="sipka">▼</span></button>
+          <button class="mobil-toggle"
+            >Základní škola <span class="sipka">▼</span></button
+          >
           <ul class="mobil-podmenu">
-            <li><a href="/waldorf-semily/zakladni-skola">O základní škole</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/prijmani">Zápis</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/druzina">Družina</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a></li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola">O základní škole</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/prijmani"
+                >Přijmání a Zápis</a
+              >
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/druzina">Družina</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a>
+            </li>
           </ul>
         </li>
         <li>
-          <button class="mobil-toggle">Střední škola <span class="sipka">▼</span></button>
+          <button class="mobil-toggle"
+            >Střední škola <span class="sipka">▼</span></button
+          >
           <ul class="mobil-podmenu">
             <li><a href="/waldorf-semily/lyceum">O střední škole</a></li>
-            <li><a href="/waldorf-semily/lyceum/prijimaci-rizeni">Přijímací řízení</a></li>
+            <li>
+              <a href="/waldorf-semily/lyceum/prijimaci-rizeni"
+                >Přijímací řízení</a
+              >
+            </li>
             <li><a href="/waldorf-semily/lyceum/maturita">Maturita</a></li>
-            <li><a href="/waldorf-semily/lyceum/profil-absolventa">Profil absolventa</a></li>
-            <li><a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a></li>
+            <li>
+              <a href="/waldorf-semily/lyceum/profil-absolventa"
+                >Profil absolventa</a
+              >
+            </li>
+            <li>
+              <a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a>
+            </li>
           </ul>
         </li>
         <li><a href="/waldorf-semily/kontakt">Kontakt</a></li>
@@ -595,85 +628,132 @@ const { title, barvFooteru = 'var(--fialova-svetla)' } = Astro.props;
     <footer style={`background: ${barvFooteru};`}>
       <div class="footer-grid">
         <div class="footer-logo">
-          <img src="/waldorf-semily/images/waldorf-logo-01.svg" alt="Waldorf Semily logo" />
+          <img
+            src="/waldorf-semily/images/waldorf-logo-01.svg"
+            alt="Waldorf Semily logo"
+          />
         </div>
-        
+
         <div class="footer-col">
-            <h4>Kontakt</h4>
-            <ul>
-                <div class="footer-socky">
-                    <a href="https://www.instagram.com/waldorf_semily/" target="_blank">
-                        <img src="/waldorf-semily/images/instagram.svg" alt="Instagram" />
-                    </a>
-                    <a href="https://www.facebook.com/SemilyWaldorf/" target="_blank">
-                        <img src="/waldorf-semily/images/facebook.svg" alt="Facebook" />
-                    </a>
-                </div>             
-                <li><a href="https://www.google.com/maps/place/Waldorfsk%C3%A1+z%C3%A1kladn%C3%AD+a+st%C5%99edn%C3%AD+%C5%A1kola+Semily,+p.+o./@50.6013711,15.3342814,731m/data=!3m2!1e3!4b1!4m6!3m5!1s0x470eb9e1e07463c1:0x820fae4e433cc4ff!8m2!3d50.6013711!4d15.3342814!16s%2Fg%2F11f147xh1g?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Waldorfská základní a střední škola <br />Semily, p. o.<br />Tyršova 485, 513 01 Semily</a></li>
-                <li><a href="mailto:info@waldorf.semily.cz">info@waldorf.semily.cz</a></li>
-                <li>Datová schránka: shdknnh</li>
-                <li>IČO: 00854824</li>
-                <li>Bankovní účet: 28534581/0100</li>
-            </ul>
+          <h4>Kontakt</h4>
+          <ul>
+            <div class="footer-socky">
+              <a
+                href="https://www.instagram.com/waldorf_semily/"
+                target="_blank"
+              >
+                <img
+                  src="/waldorf-semily/images/instagram.svg"
+                  alt="Instagram"
+                />
+              </a>
+              <a href="https://www.facebook.com/SemilyWaldorf/" target="_blank">
+                <img src="/waldorf-semily/images/facebook.svg" alt="Facebook" />
+              </a>
+            </div>
+            <li>
+              <a
+                href="https://www.google.com/maps/place/Waldorfsk%C3%A1+z%C3%A1kladn%C3%AD+a+st%C5%99edn%C3%AD+%C5%A1kola+Semily,+p.+o./@50.6013711,15.3342814,731m/data=!3m2!1e3!4b1!4m6!3m5!1s0x470eb9e1e07463c1:0x820fae4e433cc4ff!8m2!3d50.6013711!4d15.3342814!16s%2Fg%2F11f147xh1g?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                >Waldorfská základní a střední škola <br />Semily, p. o.<br
+                />Tyršova 485, 513 01 Semily</a
+              >
+            </li>
+            <li>
+              <a href="mailto:info@waldorf.semily.cz">info@waldorf.semily.cz</a>
+            </li>
+            <li>Datová schránka: shdknnh</li>
+            <li>IČO: 00854824</li>
+            <li>Bankovní účet: 28534581/0100</li>
+          </ul>
         </div>
         <div class="footer-col">
           <h4>Základní škola</h4>
           <ul>
-            <li><a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/zapis">Zápis do 1. třídy</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/druzina">Družina</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a></li>
-            <li><a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a></li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/jak-ucime">Jak učíme</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/prijmani"
+                >Zápis a příjmání</a
+              >
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/druzina">Družina</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/stravovani">Stravování</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/zakladni-skola/zivot-trid">Život tříd</a>
+            </li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Střední škola</h4>
           <ul>
             <li><a href="/waldorf-semily/lyceum/maturita">Maturita</a></li>
-            <li><a href="/waldorf-semily/lyceum/profil-absolventa">Profil absolventa</a></li>
-            <li><a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a></li>
-            <li><a href="/waldorf-semily/lyceum/prijimaci-rizeni">Přijímací řízení 26/27</a></li>
+            <li>
+              <a href="/waldorf-semily/lyceum/profil-absolventa"
+                >Profil absolventa</a
+              >
+            </li>
+            <li>
+              <a href="/waldorf-semily/lyceum/forma-studia">Forma studia</a>
+            </li>
+            <li>
+              <a href="/waldorf-semily/lyceum/prijimaci-rizeni"
+                >Přijímací řízení 26/27</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Dokumenty</h4>
           <ul>
-            <li><a href="/waldorf-semily/dokumenty">ZŠ - Školní vzdělávací program</a></li>
-            <li><a href="/waldorf-semily/dokumenty">SŠ - Školní vzdělávací program</a></li>
+            <li>
+              <a href="/waldorf-semily/dokumenty"
+                >ZŠ - Školní vzdělávací program</a
+              >
+            </li>
+            <li>
+              <a href="/waldorf-semily/dokumenty"
+                >SŠ - Školní vzdělávací program</a
+              >
+            </li>
             <li><a href="/waldorf-semily/dokumenty">Všechny dokumenty</a></li>
           </ul>
         </div>
-        
       </div>
       <div class="footer-bottom">
-        <p>© copyright 2026 Waldorfská základní a střední škola Semily, p. o.</p>
+        <p>
+          © copyright 2026 Waldorfská základní a střední škola Semily, p. o.
+        </p>
       </div>
     </footer>
 
     <script is:inline>
-      const burger = document.getElementById('burger');
-      const mobilMenu = document.getElementById('mobilMenu');
-      const mobilZavrit = document.getElementById('mobilZavrit');
-      const toggley = document.querySelectorAll('.mobil-toggle');
+      const burger = document.getElementById("burger");
+      const mobilMenu = document.getElementById("mobilMenu");
+      const mobilZavrit = document.getElementById("mobilZavrit");
+      const toggley = document.querySelectorAll(".mobil-toggle");
 
-      burger.addEventListener('click', () => {
-        mobilMenu.classList.add('otevreno');
+      burger.addEventListener("click", () => {
+        mobilMenu.classList.add("otevreno");
       });
 
-      mobilZavrit.addEventListener('click', () => {
-        mobilMenu.classList.remove('otevreno');
+      mobilZavrit.addEventListener("click", () => {
+        mobilMenu.classList.remove("otevreno");
       });
 
-      toggley.forEach(toggle => {
-        toggle.addEventListener('click', () => {
+      toggley.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
           const podmenu = toggle.nextElementSibling;
-          const sipka = toggle.querySelector('.sipka');
-          podmenu.classList.toggle('otevreno');
-          sipka.classList.toggle('otevreno');
+          const sipka = toggle.querySelector(".sipka");
+          podmenu.classList.toggle("otevreno");
+          sipka.classList.toggle("otevreno");
         });
       });
     </script>
-    
-        
   </body>
 </html>

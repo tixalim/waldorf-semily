@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Družina" barvFooteru="var(--cervena-svetla)">
-  <!-- BREADCRUMB -->
   <nav class="breadcrumb">
     <a href="/waldorf-semily/">ÚVOD</a>
     <span> - </span>
@@ -12,7 +11,6 @@ import Layout from "../../layouts/Layout.astro";
     <span>DRUŽINA</span>
   </nav>
 
-  <!-- WRAPPER s mandálou přes celý obsah -->
   <div class="druzina-wrapper">
     <img
       class="druzina-bg"
@@ -20,7 +18,6 @@ import Layout from "../../layouts/Layout.astro";
       alt="červená mandala"
     />
 
-    <!-- HERO -->
     <section class="druzina-hero">
       <h1>Školní<br />družina</h1>
       <div class="druzina-vedlejsi">
@@ -31,140 +28,77 @@ import Layout from "../../layouts/Layout.astro";
       </div>
     </section>
 
-    <!-- PROVOZ -->
     <section class="sekce dvousloupec">
-      <div class="blok">
+      <div class="blok blok-highlight">
         <h2>Provozní doba</h2>
-        <div class="provoz-grid">
-          <div class="provoz-karta">
-            <span class="provoz-cas"> 7:00 až 8:00</span>
-            <p>Ranní družina před vyučováním</p>
-          </div>
-          <div class="provoz-karta">
-            <span class="provoz-cas">Po výuce do 16:00</span>
-            <p>Odpolední družina</p>
-          </div>
-        </div>
+        <p class="cas">7:00 až 8:00</p>
+        <p class="cas-popis">Ranní družina před vyučováním</p>
+        <p class="cas">Po výuce do 16:00</p>
+        <p class="cas-popis">Odpolední družina</p>
         <p class="poznamka">
           Kapacita 72 žáků. Přednostně přijímáni žáci 1.–3. třídy s celotýdenní
           docházkou.
         </p>
       </div>
-    </section>
 
-    <!-- VYZVEDÁVÁNÍ + ZÁPIS -->
-    <section class="sekce sekce-alt dvousloupec">
-      <div class="blok">
+      <div class="blok blok-highlight">
         <h2>Vyzvedávání</h2>
-        <div class="vyzvednuti-grid">
-          <div class="vyzvednuti-item">
-            <span>Po vyučování</span><p>Dle rozvrhu třídy</p>
-          </div>
-          <div class="vyzvednuti-item">
-            <span>Po obědě</span><p>Cca 30 min po výuce</p>
-          </div>
-          <div class="vyzvednuti-item">
-            <span>Do 13:00</span><p>Před venkovními aktivitami</p>
-          </div>
-          <div class="vyzvednuti-item">
-            <span>Po 14:00</span><p>Po odpočinkové části</p>
-          </div>
-        </div>
-        <div class="upozorneni">
-          <p>
-            Změny v odchodech musí být nahlášeny předem písemně. <strong
-              >Telefonické uvolnění není možné.</strong>
-          </p>
-        </div>
+        <p>
+          Děti lze vyzvednout po vyučování, po obědě, do 13:00 nebo po 14:00.
+          Změny v odchodech musí být nahlášeny předem písemně. <strong
+            >Telefonické uvolnění není možné.</strong
+          >
+        </p>
       </div>
+
       <div class="blok">
         <h2>Jak se zapsat</h2>
-        <div class="zapis-kroky">
-          <div class="krok">
-            <span class="krok-cislo">1</span><div>
-              <strong>Zápisní list</strong><p>
-                Vyžádejte si ho od vychovatelky a vyplňte.
-              </p>
-            </div>
-          </div>
-          <div class="krok">
-            <span class="krok-cislo">2</span><div>
-              <strong>Nástup</strong><p>
-                Možný nejdříve od 2. dne školního roku.
-              </p>
-            </div>
-          </div>
-          <div class="krok">
-            <span class="krok-cislo">3</span><div>
-              <strong>Rozhodnutí ředitele</strong><p>
-                V případě nepřijetí budete písemně informováni.
-              </p>
-            </div>
-          </div>
-          <div class="krok">
-            <span class="krok-cislo">4</span><div>
-              <strong>Odhlášení</strong><p>Pouze na základě písemné žádosti.</p>
-            </div>
-          </div>
-        </div>
+        <p>
+          Zápisní list si vyžádejte od vychovatelky, vyplňte ho a odevzdejte.
+          Nástup je možný nejdříve od 2. dne školního roku. O přijetí rozhoduje
+          ředitel školy, v případě nepřijetí budete písemně informováni.
+          Odhlášení je možné pouze na základě písemné žádosti.
+        </p>
+      </div>
+
+      <div class="blok">
+        <h2>Poplatky</h2>
+        <p>
+          Výše úplaty je stanovena na začátku školního roku. Platit lze měsíčně
+          do 15. dne v měsíci, pololetně do 15. 9. a 15. 2., nebo ročně do 15.
+          září. Převodem nebo hotově v kanceláři.
+        </p>
+        <p class="poznamka">
+          O snížení lze požádat v případě hmotné nouze, příspěvku na péči nebo
+          pěstounské péče.
+        </p>
       </div>
     </section>
 
-    <!-- POPLATKY + DOKUMENTY -->
-    <section class="sekce dvousloupec">
-      <div class="blok">
-        <h2>Poplatky</h2>
-        <p class="sekce-uvod">
-          Výše úplaty je stanovena na začátku školního roku. Platit lze:
-        </p>
-        <div class="poplatky-grid">
-          <div class="poplatek-item">
-            <strong>Měsíčně</strong><p>Do 15. dne v měsíci</p>
-          </div>
-          <div class="poplatek-item">
-            <strong>Pololetně</strong><p>Do 15. 9. a 15. 2.</p>
-          </div>
-          <div class="poplatek-item">
-            <strong>Ročně</strong><p>Do 15. září</p>
-          </div>
-        </div>
-        <p class="poznamka">
-          Převodem nebo hotově v kanceláři. O snížení lze požádat v případě
-          hmotné nouze, příspěvku na péči nebo pěstounské péče.
-        </p>
-      </div>
-      <div class="blok">
-        <h2>Ke stažení</h2>
-        <div class="dokumenty-list">
-          <a
-            href="https://zs.walsem.cz/files/dokumenty/skolni-druzina-a-detsky-klub/1662279277_vn-rad-dws.pdf"
-            target="_blank"
-            class="dokument-link"
-          >
-            Vnitřní řád školní družiny
-          </a>
-          <a
-            href="https://zs.walsem.cz/files/dokumenty/skolni-druzina-a-detsky-klub/svp-dws.pdf?819cbf5a96"
-            target="_blank"
-            class="dokument-link"
-          >
-            Školní vzdělávací program pro družiny
-          </a>
-          <a
-            href="https://zs.walsem.cz/files/dokumenty/skolni-druzina-a-detsky-klub/1771840100_zapisovy-listek.pdf?88dbebd965"
-            target="_blank"
-            class="dokument-link"
-          >
-            Zápisový lístek
-          </a>
-        </div>
+    <section class="sekce sekce-dokumenty">
+      <h2>Ke stažení</h2>
+      <div class="dokumenty-list">
+        <a
+          href="https://zs.walsem.cz/files/dokumenty/skolni-druzina-a-detsky-klub/1662279277_vn-rad-dws.pdf"
+          target="_blank"
+          class="dokument-link">Vnitřní řád školní družiny</a
+        >
+        <a
+          href="https://zs.walsem.cz/files/dokumenty/skolni-druzina-a-detsky-klub/svp-dws.pdf?819cbf5a96"
+          target="_blank"
+          class="dokument-link">Školní vzdělávací program pro družiny</a
+        >
+        <a
+          href="https://zs.walsem.cz/files/dokumenty/skolni-druzina-a-detsky-klub/1771840100_zapisovy-listek.pdf?88dbebd965"
+          target="_blank"
+          class="dokument-link">Zápisový lístek</a
+        >
       </div>
     </section>
   </div>
 </Layout>
 
 <style>
-  /* BREADCRUMB */
   .breadcrumb {
     position: relative;
     padding: 3rem 6rem;
@@ -183,7 +117,6 @@ import Layout from "../../layouts/Layout.astro";
     color: var(--cervena);
   }
 
-  /* WRAPPER s mandálou */
   .druzina-wrapper {
     position: relative;
     max-width: 100vw;
@@ -241,170 +174,69 @@ import Layout from "../../layouts/Layout.astro";
     padding: 3rem 8rem;
   }
 
-  .sekce-alt {
-    background: var(--cervena-svetla);
-  }
-
   .dvousloupec {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem 6rem;
     align-items: start;
   }
 
   .blok h2 {
     font-family: Waldorf;
-    font-size: 40px;
-    margin-bottom: 1.5rem;
+    font-size: 36px;
+    margin-bottom: 1rem;
   }
 
-  .sekce-uvod {
+  .blok p {
     font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .blok-highlight {
+    background: var(--cervena-svetla);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .blok p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cas {
+    font-family: Waldorf;
+    font-size: 26px;
+    margin-bottom: 0.1rem !important;
+  }
+
+  .cas-popis {
+    font-size: 17px !important;
+    color: #1a1a1a;
+    margin-bottom: 1rem !important;
   }
 
   .poznamka {
-    font-size: 17px;
-    color: #555;
-    line-height: 1.6;
-    margin-top: 1rem;
-  }
-
-  /* PROVOZ */
-  .provoz-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .provoz-karta {
-    background: var(--cervena-svetla);
-    border-radius: 12px;
-    padding: 1.25rem;
-  }
-
-  .provoz-cas {
-    font-family: Waldorf;
-    font-size: 28px;
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
-  .provoz-karta p {
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
-  /* VYZVEDÁVÁNÍ */
-  .vyzvednuti-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .vyzvednuti-item {
-    background: white;
-    border-radius: 10px;
-    padding: 0.9rem 1rem;
-    background-color: #fdf8f5;
-  }
-
-  .vyzvednuti-item span {
-    font-size: 20px;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 0.25rem;
-  }
-
-  .vyzvednuti-item p {
-    font-size: 17px;
-    line-height: 1.4;
-  }
-
-  .upozorneni {
-    background: rgba(176, 0, 48, 0.08);
-    border-left: 4px solid var(--cervena);
-    border-radius: 0 10px 10px 0;
-    padding: 0.9rem 1.1rem;
-  }
-
-  .upozorneni p {
-    font-size: 17px;
-    line-height: 1.5;
-  }
-
-  /* ZÁPIS */
-  .zapis-kroky {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .krok {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    background: white;
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    background-color: #fdf8f5;
-  }
-
-  .krok-cislo {
-    font-family: Waldorf;
-    font-size: 40px;
-    line-height: 1;
-    flex-shrink: 0;
-    width: 2rem;
-  }
-
-  .krok strong {
-    display: block;
-    font-size: 17px;
-    margin-bottom: 0.2rem;
-  }
-
-  .krok p {
-    font-size: 17px;
-    line-height: 1.5;
-    color: #444;
-  }
-
-  /* POPLATKY */
-  .poplatky-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .poplatek-item {
-    background: var(--cervena-svetla);
-    border-radius: 12px;
-    padding: 1.1rem;
-  }
-
-  .poplatek-item strong {
-    font-family: Waldorf;
-    font-size: 25px;
-    display: block;
-    margin-bottom: 0.3rem;
-  }
-
-  .poplatek-item p {
-    font-size: 17px;
-    line-height: 1.5;
+    font-size: 17px !important;
+    color: #1a1a1a;
+    margin-top: 0.5rem;
   }
 
   /* DOKUMENTY */
+  .sekce-dokumenty {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .sekce-dokumenty h2 {
+    font-family: Waldorf;
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+  }
+
   .dokumenty-list {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    max-width: 500px;
   }
 
   .dokument-link {
@@ -416,7 +248,7 @@ import Layout from "../../layouts/Layout.astro";
     padding: 1rem 1.25rem;
     font-size: 17px;
     font-weight: 600;
-    transition: background 0.2s;
+    transition: color 0.2s;
   }
 
   .dokument-link:hover {
@@ -433,6 +265,11 @@ import Layout from "../../layouts/Layout.astro";
       padding: 2rem 3rem 4rem;
     }
 
+    .druzina-bg {
+      width: 1500px;
+      height: 1500px;
+    }
+
     .druzina-hero h1 {
       font-size: 60px;
     }
@@ -447,7 +284,7 @@ import Layout from "../../layouts/Layout.astro";
     }
 
     .blok h2 {
-      font-size: 32px;
+      font-size: 30px;
     }
   }
 
@@ -471,24 +308,8 @@ import Layout from "../../layouts/Layout.astro";
       font-size: 44px;
     }
 
-    .druzina-hero p {
-      font-size: 17px;
-    }
-
     .sekce {
       padding: 2rem 1.5rem;
-    }
-
-    .provoz-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .poplatky-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .vyzvednuti-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>
