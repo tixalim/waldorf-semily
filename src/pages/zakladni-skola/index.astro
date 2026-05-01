@@ -1,9 +1,8 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Základní škola" barvFooteru="var(--cervena-svetla)">
-
   <!-- BREADCRUMB -->
   <nav class="breadcrumb">
     <a href="/waldorf-semily/">ÚVOD</a>
@@ -15,10 +14,19 @@ import Layout from '../../layouts/Layout.astro';
 
   <!-- HERO -->
   <div class="zs-hero-wrapper">
-    <img class="zs-bg" src="/waldorf-semily/images/red.jpeg" alt="červená mandala" />
+    <img
+      class="zs-bg"
+      src="/waldorf-semily/images/red.jpeg"
+      alt="červená mandala"
+    />
     <section class="zs-hero">
-      <h1>Škola pro <br>celého člověka</h1>
-        <p>Waldorfská škola je celosvětově rozšířenou výraznou pedagogickou alternativou k tradičním školám. Je součástí pedagogického konceptu waldorfské pedagogiky sahajícího od mateřské školy, přes základní až ke střední škole.</p>
+      <h1>Škola pro <br />celého člověka</h1>
+      <p>
+        Waldorfská škola je celosvětově rozšířenou výraznou pedagogickou
+        alternativou k tradičním školám. Je součástí pedagogického konceptu
+        waldorfské pedagogiky sahajícího od mateřské školy, přes základní až ke
+        střední škole.
+      </p>
     </section>
   </div>
 
@@ -26,27 +34,45 @@ import Layout from '../../layouts/Layout.astro';
   <section class="zs-karty">
     <div class="zs-karta">
       <h2>Pro celého člověka</h2>
-      <p>Jeho hlavu, srdce i ruce. Celostní pedagogika znamená oslovovat v dítěti vyváženě jeho intelektuální, citovou i volní stránku. Prakticky se tak děje provázaností poznávacích, múzických a řemeslně - uměleckých činností.</p>
+      <p>
+        Jeho hlavu, srdce i ruce. Celostní pedagogika znamená oslovovat v dítěti
+        vyváženě jeho intelektuální, citovou i volní stránku. Prakticky se tak
+        děje provázaností poznávacích, múzických a řemeslně - uměleckých
+        činností.
+      </p>
     </div>
     <div class="zs-karta">
       <h2>Podporující zdraví</h2>
-      <p>Tělesné, duševní i duchovní. Děje se tak na mnoha rovinách počínaje uspořádáním vyučování, rytmem dne i roku a konče specifickými předměty a výukovými činnostmi, které působí na zdravý rozvoj tělesnosti dítěte.</p>
+      <p>
+        Tělesné, duševní i duchovní. Děje se tak na mnoha rovinách počínaje
+        uspořádáním vyučování, rytmem dne i roku a konče specifickými předměty a
+        výukovými činnostmi, které působí na zdravý rozvoj tělesnosti dítěte.
+      </p>
     </div>
     <div class="zs-karta">
       <h2>Doprovázející vývoj dítěte</h2>
-      <p>S jeho měnicími se potřebami, ale touhou po stabilitě. Vzdělávací program školy se důsledně odvíjí z poznání dětského vývoje. Učební látka a výukové činnosti nejsou cílem, ale nástrojem k podpoře tohoto vývoje.</p>
+      <p>
+        S jeho měnicími se potřebami, ale touhou po stabilitě. Vzdělávací
+        program školy se důsledně odvíjí z poznání dětského vývoje. Učební látka
+        a výukové činnosti nejsou cílem, ale nástrojem k podpoře tohoto vývoje.
+      </p>
     </div>
     <div class="zs-karta">
       <h2>Podporující celoživotní učení</h2>
-      <p>Bez stresu, strachu ze selhání a nezdravé ctižádostivosti. Vycházíme z předpokladu, že jedinou opravdu spolehlivou a trvalou cestou k celoživotnímu učení je probuzení zájmu o poznání.</p>
+      <p>
+        Bez stresu, strachu ze selhání a nezdravé ctižádostivosti. Vycházíme z
+        předpokladu, že jedinou opravdu spolehlivou a trvalou cestou k
+        celoživotnímu učení je probuzení zájmu o poznání.
+      </p>
     </div>
   </section>
 
   <!-- JAK UČÍME -->
   <div class="zs-link-wrapper">
-    <a href="/waldorf-semily/zakladni-skola/jak-ucime" class="zs-link">JAK UČÍME</a>
+    <a href="/waldorf-semily/zakladni-skola/jak-ucime" class="zs-link"
+      >JAK UČÍME</a
+    >
   </div>
-
 </Layout>
 
 <style>
@@ -54,11 +80,10 @@ import Layout from '../../layouts/Layout.astro';
   .breadcrumb {
     position: relative;
     padding: 3rem 6rem;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     color: #1a1a1a;
     z-index: 1;
-    
   }
 
   .breadcrumb a {
@@ -74,7 +99,6 @@ import Layout from '../../layouts/Layout.astro';
   .zs-hero-wrapper {
     position: relative;
     max-width: 100vw;
-    
   }
 
   .zs-bg {
@@ -159,68 +183,66 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   @media (max-width: 1024px) {
-  .breadcrumb {
-    padding: 2rem 3rem;
+    .breadcrumb {
+      padding: 2rem 3rem;
+    }
+
+    .zs-bg {
+      width: 1500px;
+      height: 1500px;
+    }
+
+    .zs-hero-wrapper {
+      padding: 0 3rem;
+    }
+
+    .zs-hero h1 {
+      font-size: 60px;
+    }
+
+    .zs-hero p {
+      font-size: 17px;
+    }
+
+    .zs-karty {
+      grid-template-columns: 1fr;
+      padding: 3rem 3rem;
+      gap: 1.5rem;
+    }
+
+    .zs-link-wrapper {
+      padding: 1rem 3rem 3rem;
+    }
   }
 
-  .zs-bg {
-    width: 1500px;
-    height: 1500px;
+  @media (max-width: 768px) {
+    .breadcrumb {
+      padding: 1.5rem;
+    }
+
+    .zs-hero-wrapper {
+      padding: 0 1.5rem;
+    }
+
+    .zs-hero h1 {
+      font-size: 44px;
+    }
+
+    .zs-hero p {
+      font-size: 16px;
+    }
+
+    .zs-karty {
+      padding: 1rem 1.5rem;
+    }
+
+    .zs-karta h2 {
+      font-size: 30px;
+      margin-bottom: 1.5rem;
+    }
+
+    .zs-link-wrapper {
+      padding: 1rem 1.5rem 2rem;
+    }
   }
-
-  .zs-hero-wrapper {
-    padding: 0 3rem;
-  }
-
-  .zs-hero h1 {
-    font-size: 60px;
-  }
-
-  .zs-hero p {
-    font-size: 17px;
-  }
-
-  .zs-karty {
-    grid-template-columns: 1fr;
-    padding: 3rem 3rem;
-    gap: 1.5rem;
-  }
-
-  .zs-link-wrapper {
-    padding: 1rem 3rem 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .breadcrumb {
-    padding: 1.5rem;
-  }
-
-  .zs-hero-wrapper {
-    padding: 0 1.5rem;
-  }
-
-  .zs-hero h1 {
-    font-size: 44px;
-  }
-
-  .zs-hero p {
-    font-size: 16px;
-  }
-
-  .zs-karty {
-    padding: 1rem 1.5rem;
-  }
-
-  .zs-karta h2 {
-    font-size: 30px;
-    margin-bottom: 1.5rem;
-  }
-
-
-  .zs-link-wrapper {
-    padding: 1rem 1.5rem 2rem;
-  }
-}
-
 </style>
