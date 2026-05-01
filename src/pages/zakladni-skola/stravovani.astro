@@ -1,12 +1,339 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<html lang="cs">
-  <head>
-    <meta charset="utf-8" />
-    <title>Stravování | Waldorfská škola Semily</title>
-  </head>
-  <body>
-    <h1>Stravování</h1>
-  </body>
-</html>
+<Layout title="Stravování" barvFooteru="var(--cervena-svetla)">
+  <nav class="breadcrumb">
+    <a href="/waldorf-semily/">ÚVOD</a>
+    <span> - </span>
+    <a href="/waldorf-semily/zakladni-skola">ZÁKLADNÍ ŠKOLA</a>
+    <span> - </span>
+    <span>STRAVOVÁNÍ</span>
+  </nav>
+
+  <div class="stravovani-wrapper">
+    <img
+      class="stravovani-bg"
+      src="/waldorf-semily/images/red.jpeg"
+      alt="červená mandala"
+    />
+
+    <section class="stravovani-hero">
+      <h1>Stravování</h1>
+      <div class="stravovani-vedlejsi">
+        <p>
+          Škola zajišťuje stravování odběrem obědů z jídelny při ZŠ F. L.
+          Riegra. Výdej jídel pro 1. až 8. třídu probíhá přímo v budově školy na
+          Tyršově 485.
+        </p>
+      </div>
+    </section>
+
+    <section class="sekce dvousloupec">
+      <div class="blok blok-highlight">
+        <h2>Přihlašování a odhlašování</h2>
+        <p>
+          Přihlašování i odhlašování obědů probíhá výhradně přes aplikaci <a
+            href="https://app.strava.cz/prihlasit-se?jidelna&jidelna=11515"
+            target="_blank">Strava.cz</a
+          >. V případě potíží kontaktujte jídelnu na <a
+            href="mailto:jidelna@waldorf.semily.cz">jidelna@waldorf.semily.cz</a
+          >.
+        </p>
+        <p>
+          Odhlášení oběda je možné nejpozději do <strong>6:30 hod.</strong> na příslušný
+          den. Změna stravy (masová / bezmasá) a opětovné přihlášení oběda je možné
+          nejpozději do <strong>9:30 hod.</strong> den předem.
+        </p>
+      </div>
+
+      <div class="blok">
+        <h2>Obědy v době nemoci</h2>
+        <p>
+          V případě neodhlášení je možné první den nemoci oběd vyzvednout do
+          jídlonosiče v jídelně Waldorfské ZŠ od <strong
+            >11:30 do 14:00 hod.</strong
+          >
+        </p>
+        <p>
+          Na další dny nemoci musí být oběd odhlášen, jinak bude vydán za
+          nedotovanou plnou cenu.
+        </p>
+      </div>
+
+      <div class="blok">
+        <h2>Jídelníček pro 1. až 8. třídu</h2>
+        <p>
+          Výdej obědů probíhá v budově ZŠ na Tyršově 485. Aktuální jídelníček
+          najdete v aplikaci Strava.cz.
+        </p>
+        <a
+          href="https://app.strava.cz/jidelnicky?jidelna=11515"
+          target="_blank"
+          class="jidelnicek-link">Zobrazit jídelníček</a
+        >
+      </div>
+
+      <div class="blok">
+        <h2>Jídelníček pro 9. třídu a SŠ</h2>
+        <p>
+          Žáci 9. třídy spolu s ročníky střední školy docházejí na obědy do
+          jídelny ZŠ F. L. Riegra.
+        </p>
+        <a
+          href="https://app.strava.cz/jidelnicky?jidelna=0262"
+          target="_blank"
+          class="jidelnicek-link">Zobrazit jídelníček</a
+        >
+      </div>
+    </section>
+
+    <section class="sekce sekce-dokumenty">
+      <h2>Dokumenty ke stažení</h2>
+      <div class="dokumenty-list">
+        <a
+          href="https://zs.walsem.cz/files/dokumenty/stravovani/prihlaska-ke-stravovani-wzs-2025.pdf?8a7d60bb4d"
+          target="_blank"
+          class="dokument-link">Přihláška ke stravování</a
+        >
+        <a
+          href="https://zs.walsem.cz/files/dokumenty/stravovani/cenik.pdf?d6fa8c601f"
+          target="_blank"
+          class="dokument-link">Ceník stravování</a
+        >
+        <a
+          href="https://zs.walsem.cz/files/dokumenty/stravovani/vnitrni-rad-skolni-vydejny.pdf?498437f684"
+          target="_blank"
+          class="dokument-link">Vnitřní řád školní jídelny a výdejny</a
+        >
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .breadcrumb {
+    position: relative;
+    padding: 3rem 6rem;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    z-index: 1;
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--cervena);
+  }
+
+  .stravovani-wrapper {
+    position: relative;
+    max-width: 100vw;
+  }
+
+  .stravovani-bg {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    width: 2400px;
+    height: auto;
+    object-fit: contain;
+    z-index: 0;
+    transform: translate(-43%, -4%) rotate(-190deg);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  /* HERO */
+  .stravovani-hero {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 0 6rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .stravovani-hero h1 {
+    font-family: Waldorf;
+    font-size: 90px;
+    line-height: 1.2;
+    flex-shrink: 0;
+    max-width: 500px;
+  }
+
+  .stravovani-vedlejsi {
+    padding-top: 2rem;
+    padding-left: 6rem;
+  }
+
+  .stravovani-hero p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  /* SEKCE */
+  .sekce {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 8rem;
+  }
+
+  .dvousloupec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem 6rem;
+    align-items: start;
+  }
+
+  .blok h2 {
+    font-family: Waldorf;
+    font-size: 36px;
+    margin-bottom: 1rem;
+  }
+
+  .blok p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .blok {
+    padding: 1.5rem;
+  }
+
+  .blok p:last-child {
+    margin-bottom: 0;
+  }
+
+  .blok a {
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  .blok a:hover {
+    color: var(--cervena);
+  }
+
+  .blok-highlight {
+    background: var(--cervena-svetla);
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .jidelnicek-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--cervena);
+    padding-bottom: 2px;
+  }
+
+  .jidelnicek-link:hover {
+    color: var(--cervena);
+  }
+
+  /* DOKUMENTY */
+  .sekce-dokumenty {
+    border-top: 1px solid rgba(0, 0, 0, 0.38);
+  }
+
+  .sekce-dokumenty h2 {
+    font-family: Waldorf;
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+  }
+
+  .dokumenty-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 500px;
+  }
+
+  .dokument-link {
+    display: block;
+    text-decoration: none;
+    color: #1a1a1a;
+    background: var(--cervena-svetla);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .dokument-link:hover {
+    color: var(--cervena);
+  }
+
+  /* RESPONZIVITA */
+  @media (max-width: 1024px) {
+    .breadcrumb {
+      padding: 2rem 3rem;
+    }
+
+    .stravovani-hero {
+      padding: 2rem 3rem 4rem;
+    }
+
+    .stravovani-bg {
+      width: 1500px;
+      height: 1500px;
+    }
+
+    .stravovani-hero h1 {
+      font-size: 60px;
+    }
+
+    .sekce {
+      padding: 2.5rem 3rem;
+    }
+
+    .dvousloupec {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .blok h2 {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumb {
+      padding: 1.5rem;
+    }
+
+    .stravovani-hero {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .stravovani-vedlejsi {
+      padding-top: 0;
+      padding-left: 0;
+    }
+
+    .stravovani-hero h1 {
+      font-size: 44px;
+    }
+
+    .sekce {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
